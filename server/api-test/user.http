@@ -1,0 +1,37 @@
+@BASE_URL = http://localhost:8000/api/user
+
+@CONTENT_TYPE = Content-Type: application/json
+
+### 注册
+post {{BASE_URL}}/register
+{{CONTENT_TYPE}}
+
+{
+    "username": "ryanliu22",
+    "password": "123456"
+}
+
+### 登录
+post {{BASE_URL}}/login
+{{CONTENT_TYPE}}
+
+{
+    "username": "ryan111",
+    "password": "123456"
+}
+
+### 获取所有用户表
+get {{BASE_URL}}/getUserList
+{{CONTENT_TYPE}}
+
+
+### 获取个人信息
+post {{BASE_URL}}/profile
+{{CONTENT_TYPE}}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NTdhZWVmMGY0Mjg5N2MxMzdiYjdhOSIsImlhdCI6MTY4MzQ2OTIyMywiZXhwIjoxNjgzNDY5MjgzfQ.9oTTxHVcpgpby-fBfYO5eyCzNmVLL2Bs4OcKwUiqeAU
+
+### 验证token
+post {{BASE_URL}}/checkLogin
+{{CONTENT_TYPE}}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NTdhZWVmMGY0Mjg5N2MxMzdiYjdhOSIsImlhdCI6MTY4MzQ2OTIyMywiZXhwIjoxNjgzNDY5MjgzfQ.9oTTxHVcpgpby-fBfYO5eyCzNmVLL2Bs4OcKwUiqeAU
+
